@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">DailyAccount</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">MD Hossen Rana</string>
+    <string name="nav_header_subtitle">mhrana.sfd@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Main Page</string>
+    <string name="menu_daily">Daily Account</string>
+    <string name="menu_monthly">Monthly Account</string>
+    <string name="menu_yearly">Yearly Account</string>
+</resources>

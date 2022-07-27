@@ -1,0 +1,17 @@
+SELECT 
+(CASE WHEN devdate is null THEN credate ELSE devdate END)as itemdate,
+(CASE WHEN devAmount is null THEN 0 ELSE devAmount END)as devamou,
+(CASE WHEN creAmount  is null THEN 0 ELSE creAmount  END)as creamou
+from (
+SELECT * FROM ( 
+SELECT `date` as devdate,SUM(amount) as devAmount FROM MyAccount.account WHERE status ='Devit' and `date` LIKE '%2022-01%' GROUP BY `date` 
+) as devT LEFT JOIN  ( 
+SELECT `date` as credate,SUM(amount) as creAmount FROM MyAccount.account WHERE status ='Credit' and `date` LIKE '%2022-01%' GROUP BY `date`
+) as creT on devdate = credate 
+UNION 
+SELECT * FROM ( 
+SELECT `date` as devdate,SUM(amount) as devAmount FROM MyAccount.account WHERE status ='Devit' and `date` LIKE '%2022-01%' GROUP BY `date` 
+) as devT RIGHT  JOIN  ( 
+SELECT `date` as credate,SUM(amount) as creAmount FROM MyAccount.account WHERE status ='Credit' and `date` LIKE '%2022-01%' GROUP BY `date`
+) as creT on devdate = credate )as lastT
+

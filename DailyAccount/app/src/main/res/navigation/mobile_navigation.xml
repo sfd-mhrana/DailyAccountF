@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.dailyaccount.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="dates"
+            app:argType="string"
+            android:defaultValue="items"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_daily"
+        android:name="com.example.dailyaccount.ui.daily.DailyFragment"
+        android:label="@string/menu_daily"
+        tools:layout="@layout/fragment_daily" >
+        <action
+            android:id="@+id/action_nav_daily_to_nav_home"
+            app:destination="@id/nav_home" />
+        <argument
+            android:name="month"
+            app:argType="string"
+            android:defaultValue="dates"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_monthly"
+        android:name="com.example.dailyaccount.ui.monthly.MonthlyFragment"
+        android:label="@string/menu_monthly"
+        tools:layout="@layout/fragment_monthly" >
+        <action
+            android:id="@+id/action_nav_monthly_to_nav_daily2"
+            app:destination="@id/nav_daily" />
+        <argument
+            android:name="year"
+            app:argType="string"
+            android:defaultValue="month">
+
+        </argument>
+        <action
+            android:id="@+id/action_nav_monthly_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_yearly"
+        android:name="com.example.dailyaccount.ui.yearly.YearlyFragment"
+        android:label="@string/menu_yearly"
+        tools:layout="@layout/fragment_yearly" >
+        <action
+            android:id="@+id/action_nav_yearly_to_nav_monthly"
+            app:destination="@id/nav_monthly" />
+        <action
+            android:id="@+id/action_nav_yearly_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+</navigation>

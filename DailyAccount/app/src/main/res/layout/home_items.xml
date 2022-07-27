@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:elevation="20dp"
+    android:id="@+id/home_cardview"
+    android:layout_marginRight="25dp"
+    android:layout_marginLeft="25dp"
+    android:layout_marginTop="15dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_view1"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/hd_c_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/profile"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/card_view2"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            >
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hitem_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Details"
+                    android:textColor="#050110"
+                    android:textSize="25dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/hidate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Credit"
+                    android:textSize="15dp"
+
+                    />
+            </LinearLayout>
+
+                <TextView
+                    android:id="@+id/hiamount"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Devit"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
